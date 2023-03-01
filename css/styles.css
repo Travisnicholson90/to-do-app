@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@100;200;300&family=Exo:wght@600&family=Gajraj+One&family=Inter:wght@400;700;800&family=Josefin+Sans&family=Kumbh+Sans:wght@400;700&family=League+Spartan:wght@700&family=Libre+Franklin:wght@300;600;700&family=Manrope:wght@500;700&family=Overpass:wght@400;700&family=Plus+Jakarta+Sans:wght@500;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Space+Grotesk:wght@500&family=Space+Mono:wght@700&display=swap');
+/*  */
+
+:root {
+
+/*  */
+--Bright-Blue: hsl(220, 98%, 61%);
+--Check-Background: linear-gradient(180deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+/* light theme */
+--Very-Light-Gray: hsl(0, 0%, 98%);
+--Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+--Light-Grayish-Blue: hsl(233, 11%, 84%);
+--Dark-Grayish-Blue: rgb(147, 148, 165);
+--Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+--red: rgb(220, 46, 46);
+
+/* dark theme */
+--Very-Dark-Blue: hsl(235, 21%, 11%);
+--Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+--Light-Grayish-Blue: hsl(234, 39%, 85%);
+--Light-Grayish-Blue:(hover) hsl(236, 33%, 92%);
+--Dark-Grayish-Blue: hsl(234, 11%, 52%);
+--Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+--Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+
+/* widths */
+--todo-width: clamp(17rem, 50vw + 1rem, 80rem);
+--todo-padd: 0.5rem;
+
+
+/* text */
+--font-size: clamp(.5rem, 4vw + 0rem, 1.5rem);
+--font-family: 'Josefin Sans';
+--fw-400: 400;
+--fw-700: 700;
+
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    justify-content: center;
+    font-family: var(--font-family);
+    background: linear-gradient(180deg, hsl(234, 11%, 52%), hsl(237, 14%, 26%))
+}
+
+header {
+    font-size: clamp(1rem, 5vw + 0rem, 2rem);
+    padding: 3rem 0;
+    color: rgb(252, 239, 239);
+    text-shadow: 5px 5px 10px currentColor;
+}
+
+.main-grid {
+    display: grid;
+    place-items: center;
+}
+
+.input-container {
+   position: relative;
+}
+
+.input-container img {
+    width: 35px;
+    top: 3px;
+    right: 10px;
+    position: absolute;
+}
+
+.input-container img:hover {
+    cursor: pointer;
+    opacity: .5;
+}
+
+input {
+    width: var(--todo-width);
+    font-size: var(--font-size);
+    padding: var(--todo-padd);
+    color: var(--Dark-Grayish-Blue);
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px white;
+
+}
+
+.list-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    list-style: none;
+    color: var(--Dark-Grayish-Blue);
+    font-size: var(--font-size);
+    font-weight: var(--fw-700);
+    width: var(--todo-width);
+    border: 1px solid var(--Dark-Grayish-Blue);
+    padding: clamp(.5rem, 10vh + 1rem, 1rem) 1rem;
+    background: var(--Very-Light-Gray);
+    border: none;
+    border-bottom: 1px solid var(--Dark-Grayish-Blue);
+    box-shadow: 0 0 10px white;
+
+}
+
+.complete:after {
+    content: '✅';
+}
+.complete {
+    width: 35px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: inherit;
+    border: none;
+}
+
+.remove:after {
+    content: '❌';
+}
+.remove {
+    margin-left: auto;
+    width: 35px;
+    aspect-ratio: 1;
+    background: inherit;
+    border: none;
+    border-radius: 50%;
+}
+
+.complete:hover {
+    cursor: pointer;
+    opacity: .5;
+}
+
+.remove:hover {
+    cursor: pointer;
+    opacity: .5;
+}
+
+.list-item:nth-child(1) {
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+
+.status {
+    color: var(--Dark-Grayish-Blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--font-size);
+    width: var(--todo-width);
+    padding: var(--todo-padd);
+    background: var(--Very-Light-Gray);
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    box-shadow: 0 0 10px white;
+
+}
+
+
+.clear-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    color: var(--red);
+    padding: 5px;
+    border-radius: 30px;
+}
+
+.clear-all:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+
+.number-items {
+    font-style: italic;
+    color: rgb(92, 92, 184);
+}
